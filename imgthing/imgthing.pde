@@ -1,43 +1,62 @@
 PImage img;
-final int detail = 10;
+
+int res = 10;
 float total, hue, sat, bri;
 
-
 void setup() {
-  size(220, 298, P3D);
+  size(800, 600, P3D);
   colorMode(HSB);
-  img = loadImage("input.jpg");
+  img = loadImage("input.jpeg");
+}
+
+void draw() {
   background(255);
-  stroke(0);
-  for(int i=0; i!=img.width*img.height; ++i){
+
+  for (int i=0; i!=img.width*img.height; ++i) {
     total += brightness(img.pixels[i]);
   }
   hue = total/(img.width*img.height);
   total = 0;
+  //println('H');
+  //println(hue);
+  //println('S');
 
-  for (int x=detail; x<=img.width; x+=detail) {
-    for(int i=0; i!=img.height; ++i){
-      total += brightness(img.pixels[i]);
+  for (int x=res; x<img.width-res; x+=res) {
+    for (int i=0; i!=img.height; ++i) {
+      total += brightness(img.pixels[i*img.width+x]);
+    }
+    sat = total/img.height;
+    total = 0;
+    //println(sat);
+    stroke(hue, sat, 255);
+    for (int y=0; y<img.height-res; y+=res) {
+      line(x, y, brightness(img.pixels[y*img.width+x])/2, x, y+res, brightness(img.pixels[(y+res)*img.width+x])/2);
+    }
+  }
+  //println('B');
+  for (int y=res; y<img.height-res; y+=res) {
+    for (int i=0; i!=img.width; ++i) {
+      total += brightness(img.pixels[y*img.width+i]);
     }
     bri = total/img.height;
     total = 0;
-    for (int y=detail; y<=img.height; y+=detail) {
-      stroke(hue, hue, bri);
-      line(x, y-detail, brightness(img.pixels[(y-detail)*(img.width-1)+x])/5, x, y, brightness(img.pixels[y*(img.width-1)+x])/5);
-    }
-  }
-  for (int y=detail; y<=img.height; y+=detail) {
-    for(int i=0; i!=img.width; ++i){
-      total += brightness(img.pixels[i]);
-    }
-    sat = total/img.width;
-    total = 0;
-    for (int x=detail; x<=img.width; x+=detail) {
-      stroke(hue, sat, hue);
-      line(x-detail, y, brightness(img.pixels[y*(img.width-1)+x-detail])/5, x, y, brightness(img.pixels[y*(img.width-1)+x])/5);
+    //println(bri);
+    stroke(hue, 255, bri);
+    for (int x=0; x<img.width-res; x+=res) {
+      line(x, y, brightness(img.pixels[y*img.width+x])/2, x+res, y, brightness(img.pixels[y*img.width+(x+res)])/2);
     }
   }
 }
 
-void draw() {
+void keyPressed() {
+  if (key == 's' || key == 'S') {
+    save("output.jpg");
+  } else if (key == CODED) {
+    if (keyCode == UP) {
+      ++res;
+    }
+    if (keyCode == DOWN && res > 1) {
+      --res;
+    }
+  }
 }
