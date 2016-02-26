@@ -65,10 +65,7 @@ void keyPressed(){
     file.println("facet normal 0 0 0");
     file.println("outer loop");
     for(int j=0; j!=3; ++j){
-      file.print("vertex ");
-      file.print(a[(i+j)%a.length][0]); file.print(' ');
-      file.print(a[(i+j)%a.length][1]); file.print(' ');
-      file.println(a[(i+j)%a.length][2]);
+      file.println("vertex " + a[(i+j)%a.length][0] + ' ' + a[(i+j)%a.length][1] + ' ' + a[(i+j)%a.length][2]);
     }
     file.println("endloop");
     file.println("endfacet");
