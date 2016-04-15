@@ -85,17 +85,17 @@ void setup() {
         int convertY = Float.floatToIntBits(y);
         int convertZ = Float.floatToIntBits(z);
 
-        binfile.write(convertX >> 24);
-        binfile.write(convertX >> 16);
-        binfile.write(convertX >> 8);
+        binfile.write((convertX >> 24) & 0xff);
+        binfile.write((convertX >> 16) & 0xff);
+        binfile.write((convertX >> 8) & 0xff);
         binfile.write(convertX);
-        binfile.write(convertY >> 24);
-        binfile.write(convertY >> 16);
-        binfile.write(convertY >> 8);
+        binfile.write((convertY >> 24) & 0xff);
+        binfile.write((convertY >> 16) & 0xff);
+        binfile.write((convertY >> 8) & 0xff);
         binfile.write(convertY);
-        binfile.write(convertZ >> 24);
-        binfile.write(convertZ >> 16);
-        binfile.write(convertZ >> 8);
+        binfile.write((convertZ >> 24) & 0xff);
+        binfile.write((convertZ >> 16) & 0xff);
+        binfile.write((convertZ >> 8) & 0xff);
         binfile.write(convertZ);
       }
       binfile.write(0);
@@ -107,7 +107,6 @@ void setup() {
   catch(IOException e) {
     println("Oh no! " + e);
   }
-  println(binfile);
 }
 
 void draw() {
