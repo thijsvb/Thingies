@@ -105,8 +105,9 @@ void setup() {
     binfile.close();
   }
   catch(IOException e) {
-    println(e);
+    println("Oh no! " + e);
   }
+  println(binfile);
 }
 
 void draw() {
