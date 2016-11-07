@@ -1,5 +1,5 @@
 # bfAnimation
-## is my first animation thingie written in Brainfuck
+## is my first animation thingie written in Brainfuck, just input anything to see what it does!
 
 The file `bfAnimation` has just the program, while `bfAnimationComments` also has whitespace and comments to explain the program
 
