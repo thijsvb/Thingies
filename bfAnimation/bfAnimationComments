@@ -1,0 +1,114 @@
+set up cel 4 and 5 to hold a value of 32
+>>> ++++
+[
+  > +++++ +++
+  > +++++ +++
+  << -
+]
+
+set up cel 5 to hold a value of 46
+>>> ++
+[
+  < +++++ ++
+  > -
+]
+
+get input to be the number of animation frames
+,
+
+set up cel 1 and cel 7 to hold that value
+[
+  > +
+  <<<<< < +
+  >>>>> -
+]
+
+copy that value back to cel 6
+>
+[
+  < +
+  > -
+]
+
+go back to cel 1
+<<<<< <
+
+[
+
+  copy the value in cel 1 to cel 0 and 3
+  [
+    < +
+    >>> +
+    << -
+  ]
+
+  print i spaces; i being the value of cel 2
+  >
+  [
+    >> .
+    << -
+  ]
+
+  print a dot
+  >>> . <<
+
+  print j spaces; j being the value of cel 3
+  [
+    > .
+    < -
+  ]
+
+  print a new line and clear cel
+  +++++ +++++ . [-]
+
+  slow down the animation
+  >>>>> >>>>>
+  +++++ +++++
+  [
+    > +++++ +++++
+    [
+      > +++++ +++++
+      [
+        > +++++ +++++
+        [
+          > +++++ +++++
+          [
+            -
+          ]
+          < -
+        ]
+        < -
+      ]
+      < -
+    ]
+    < -
+  ]
+  <<<<< <<<<<
+
+  set cel 2 and cel 7 to the value of cel 6
+  >>>
+  [
+    > +
+    <<<<< +
+    >>>> -
+  ]
+
+  copy that value back to cel 6
+  >
+  [
+    < +
+    > -
+  ]
+
+  decrease cel 0
+  <<<<< << -
+
+  copy cel 0 to cel 1 and decrease cel 2 by that value
+  [
+    > +
+    > -
+    << -
+  ]
+  >
+  
+]
