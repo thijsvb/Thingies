@@ -31,6 +31,21 @@ go back to cel 1
 
 [
 
+  clear screen by printing some lines
+  >>>>> >>>>>
+  +++++
+  [
+    > +++++
+    [
+      >
+      print a new line and clear cel
+      +++++ +++++ . [-]
+      < -
+    ]
+    < -
+  ]
+  <<<<< <<<<<
+
   copy the value in cel 1 to cel 0 and 3
   [
     < +
@@ -53,9 +68,6 @@ go back to cel 1
     > .
     < -
   ]
-
-  print a new line and clear cel
-  +++++ +++++ . [-]
 
   slow down the animation
   >>>>> >>>>>
@@ -106,5 +118,5 @@ go back to cel 1
     << -
   ]
   >
-  
+
 ]

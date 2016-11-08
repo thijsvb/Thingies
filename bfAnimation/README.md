@@ -8,5 +8,3 @@ I use beef to run it in my terminal
 To get beef run `sudo apt-get install beef`
 
 To use to run bfAnimation, go to this folder then run `beef bfAnimation`
-
-**Tip:** Shorten your terminal to only display one line to get the best effect!
