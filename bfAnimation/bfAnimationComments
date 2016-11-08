@@ -1,20 +1,16 @@
-set up cel 4 and 5 to hold a value of 32
->>> ++++
+set up cel 4 to hold a value of 95 (underscore) and cel 5 to hold a value of 45
+>>> +++++
 [
-  > +++++ +++
-  > +++++ +++
+  > +++++ +++++ +++++ ++++
+  > +++++ ++++
   << -
 ]
 
-set up cel 5 to hold a value of 46
->>> ++
-[
-  < +++++ ++
-  > -
-]
+set up cel 5 to hold a value of 46 (dot)
+>> +
 
-get input to be the number of animation frames
-,
+get input to be the number of animation frames in cel 6
+> ,
 
 set up cel 1 and cel 7 to hold that value
 [
