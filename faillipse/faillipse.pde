@@ -7,12 +7,14 @@ void setup() {
 
 float a = 0;
 void draw() {
+  translate(width/2, height/2);
+  rotate(a);
   background(0);
   a+=0.05;
   for (float d=200; d>0; d-=20) {
     fill(map(d, 200, 0, 0, 255), 255, 255);
     float f = sin(a)*d*3/10;
-    faillipse(250, 250, d*2, d, f);
+    faillipse(0, 0, d*2, d, f);
   }
 }
 
