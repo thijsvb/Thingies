@@ -39,10 +39,11 @@ void setup() {
   
 }
 
-float a = 0;
+int i = 0;
+int speed = 120;
 
 void draw() {
-  a = (a+PI/60)%TWO_PI;
+  float a = (++i*PI/speed)%TWO_PI;
   background(0);
   translate(-150, 200,0);
   translate(o.x,o.y,o.z+250);
@@ -56,4 +57,7 @@ void draw() {
   stroke(0, 0, 255);
   line(o.x, o.y, o.z, o.x, o.y, o.z+100);
   shape(plot);
+  
+  saveFrame("frames/###.png");
+  if(i == speed*2) exit();
 }
