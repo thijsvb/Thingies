@@ -1,4 +1,5 @@
 PShape plot;
+PVector o;
 
 void setup() {
   size(500, 500, P3D);
@@ -32,10 +33,27 @@ void setup() {
   }
   plot.endShape();
   
+  o = new PVector(map(data.getFloat(1,0), min, max, 0, width),
+                  map(data.getFloat(1,2), min, max, width, 0),
+                  map(data.getFloat(1,1), min, max, 0, -width));
+  
 }
 
+float a = 0;
+
 void draw() {
+  a = (a+PI/60)%TWO_PI;
   background(0);
-  translate(0, 0,0);
+  translate(-150, 200,0);
+  translate(o.x,o.y,o.z+250);
+  rotateY(a);
+  translate(-o.x,-o.y,-o.z-250);
+  
+  stroke(255, 0, 0);
+  line(o.x, o.y, o.z, o.x+100, o.y, o.z);
+  stroke(0, 255, 0);
+  line(o.x, o.y, o.z, o.x, o.y-100, o.z);
+  stroke(0, 0, 255);
+  line(o.x, o.y, o.z, o.x, o.y, o.z+100);
   shape(plot);
 }
