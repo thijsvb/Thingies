@@ -22,7 +22,7 @@ void draw() {
     drop.show();
   }
   
-  if(drops.size() == max) drops.remove(0);
+  if(drops.size() == max) drops.clear();
 
   if (floor(random(20)) == 0) {
     drops.add(new Drop(grid[floor(random(rows))][floor(random(rows))]));
