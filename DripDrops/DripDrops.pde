@@ -1,4 +1,4 @@
-final int rows = 300;
+final int rows = 300, max = 50;
 float w;
 
 Cel[][] grid = new Cel[rows][rows];
@@ -7,7 +7,6 @@ ArrayList<Drop> drops = new ArrayList<Drop>();
 void setup() {
   size(500, 500);
   w = width/float(rows);
-  println(w);
   for (int i=0; i!=rows; ++i) {
     for (int j=0; j!=rows; ++j) {
       grid[i][j] = new Cel(i, j);
@@ -23,7 +22,9 @@ void draw() {
     drop.show();
   }
   
-  if(floor(random(50)) == 0) {
-    drops.add(new Drop(grid[floor(random(rows))][floor(random(rows/3))]));
+  if(drops.size() == max) drops.remove(0);
+
+  if (floor(random(20)) == 0) {
+    drops.add(new Drop(grid[floor(random(rows))][floor(random(rows))]));
   }
 }
